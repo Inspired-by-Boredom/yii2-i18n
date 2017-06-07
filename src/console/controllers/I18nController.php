@@ -7,8 +7,8 @@ use yii\console\Controller;
 use yii\console\Exception;
 use yii\helpers\FileHelper;
 use yii\helpers\VarDumper;
-use Zelenin\yii\modules\I18n\models\Message;
-use Zelenin\yii\modules\I18n\models\SourceMessage;
+use greeflas\yii\modules\I18n\models\Message;
+use greeflas\yii\modules\I18n\models\SourceMessage;
 
 class I18nController extends Controller
 {

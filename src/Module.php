@@ -4,7 +4,7 @@ namespace greeflas\yii\modules\I18n;
 
 use Yii;
 use yii\i18n\MissingTranslationEvent;
-use Zelenin\yii\modules\I18n\models\SourceMessage;
+use greeflas\yii\modules\I18n\models\SourceMessage;
 
 class Module extends \yii\base\Module
 {

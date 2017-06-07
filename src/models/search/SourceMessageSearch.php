@@ -3,10 +3,9 @@
 namespace greeflas\yii\modules\I18n\models\search;
 
 use yii\data\ActiveDataProvider;
-use Yii;
 use yii\helpers\ArrayHelper;
-use Zelenin\yii\modules\I18n\models\SourceMessage;
-use Zelenin\yii\modules\I18n\Module;
+use greeflas\yii\modules\I18n\models\SourceMessage;
+use greeflas\yii\modules\I18n\Module;
 
 class SourceMessageSearch extends SourceMessage
 {

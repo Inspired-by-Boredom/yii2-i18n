@@ -4,7 +4,7 @@ namespace greeflas\yii\modules\I18n\models\query;
 
 use Yii;
 use yii\db\ActiveQuery;
-use Zelenin\yii\modules\I18n\models\Message;
+use greeflas\yii\modules\I18n\models\Message;
 
 class SourceMessageQuery extends ActiveQuery
 {

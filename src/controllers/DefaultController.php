@@ -7,9 +7,9 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
 use Yii;
-use Zelenin\yii\modules\I18n\models\search\SourceMessageSearch;
-use Zelenin\yii\modules\I18n\models\SourceMessage;
-use Zelenin\yii\modules\I18n\Module;
+use greeflas\yii\modules\I18n\models\search\SourceMessageSearch;
+use greeflas\yii\modules\I18n\models\SourceMessage;
+use greeflas\yii\modules\I18n\Module;
 
 class DefaultController extends Controller
 {
