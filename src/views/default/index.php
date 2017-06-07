@@ -7,7 +7,7 @@ use yii\widgets\Pjax;
 
 /**
  * @var \yii\web\View $this
- * @var \greeflas\yii\modules\I18n\models\search\SourceMessageSearch $searchModel
+ * @var \vintage\i18n\models\search\SourceMessageSearch $searchModel
  * @var \yii\data\ActiveDataProvider $dataProvider
  */
 

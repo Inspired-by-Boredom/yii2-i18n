@@ -1,11 +1,11 @@
 <?php
 
-namespace greeflas\yii\modules\I18n\models;
+namespace vintage\i18n\models;
 
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\db\ActiveRecord;
-use greeflas\yii\modules\I18n\Module;
+use vintage\i18n\Module;
 
 class Message extends ActiveRecord
 {

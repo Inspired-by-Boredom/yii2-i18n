@@ -1,10 +1,10 @@
 <?php
 
-namespace greeflas\yii\modules\I18n\models\query;
+namespace vintage\i18n\models\query;
 
 use Yii;
 use yii\db\ActiveQuery;
-use greeflas\yii\modules\I18n\models\Message;
+use vintage\i18n\models\Message;
 
 class SourceMessageQuery extends ActiveQuery
 {

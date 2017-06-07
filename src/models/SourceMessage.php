@@ -1,12 +1,12 @@
 <?php
 
-namespace greeflas\yii\modules\I18n\models;
+namespace vintage\i18n\models;
 
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\db\ActiveRecord;
-use greeflas\yii\modules\I18n\models\query\SourceMessageQuery;
-use greeflas\yii\modules\I18n\Module;
+use vintage\i18n\models\query\SourceMessageQuery;
+use vintage\i18n\Module;
 
 class SourceMessage extends ActiveRecord
 {

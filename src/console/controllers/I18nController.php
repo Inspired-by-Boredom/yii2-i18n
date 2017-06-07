@@ -1,14 +1,14 @@
 <?php
 
-namespace greeflas\yii\modules\I18n\console\controllers;
+namespace vintage\i18n\console\controllers;
 
 use Yii;
 use yii\console\Controller;
 use yii\console\Exception;
 use yii\helpers\FileHelper;
 use yii\helpers\VarDumper;
-use greeflas\yii\modules\I18n\models\Message;
-use greeflas\yii\modules\I18n\models\SourceMessage;
+use vintage\i18n\models\Message;
+use vintage\i18n\models\SourceMessage;
 
 class I18nController extends Controller
 {

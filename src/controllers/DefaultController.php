@@ -1,15 +1,15 @@
 <?php
 
-namespace greeflas\yii\modules\I18n\controllers;
+namespace vintage\i18n\controllers;
 
 use yii\base\Model;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
 use Yii;
-use greeflas\yii\modules\I18n\models\search\SourceMessageSearch;
-use greeflas\yii\modules\I18n\models\SourceMessage;
-use greeflas\yii\modules\I18n\Module;
+use vintage\i18n\models\search\SourceMessageSearch;
+use vintage\i18n\models\SourceMessage;
+use vintage\i18n\Module;
 
 class DefaultController extends Controller
 {

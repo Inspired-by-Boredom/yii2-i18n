@@ -1,10 +1,10 @@
 <?php
 
-namespace greeflas\yii\modules\I18n;
+namespace vintage\i18n;
 
 use Yii;
 use yii\i18n\MissingTranslationEvent;
-use greeflas\yii\modules\I18n\models\SourceMessage;
+use vintage\i18n\models\SourceMessage;
 
 class Module extends \yii\base\Module
 {
@@ -12,7 +12,7 @@ class Module extends \yii\base\Module
 
     public static function t($message, $params = [], $language = null)
     {
-        return Yii::t('zelenin/modules/i18n', $message, $params, $language);
+        return Yii::t('app/i18n', $message, $params, $language);
     }
 
     /**

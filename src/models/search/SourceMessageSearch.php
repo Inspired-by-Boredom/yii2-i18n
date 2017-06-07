@@ -1,11 +1,11 @@
 <?php
 
-namespace greeflas\yii\modules\I18n\models\search;
+namespace vintage\i18n\models\search;
 
-use greeflas\yii\modules\I18n\models\Message;
 use yii\data\ActiveDataProvider;
 use yii\helpers\ArrayHelper;
-use greeflas\yii\modules\I18n\models\SourceMessage;
+use vintage\i18n\models\Message;
+use vintage\i18n\models\SourceMessage;
 
 class SourceMessageSearch extends SourceMessage
 {

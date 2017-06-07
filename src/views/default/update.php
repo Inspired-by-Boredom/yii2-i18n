@@ -5,7 +5,7 @@ use yii\widgets\Breadcrumbs;
 
 /**
  * @var \yii\web\View $this
- * @var \greeflas\yii\modules\I18n\models\SourceMessage $model
+ * @var \vintage\i18n\models\SourceMessage $model
  */
 
 $this->title = 'Редактирование' . ': ' . $model->message;

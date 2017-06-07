@@ -1,11 +1,11 @@
 <?php
 
-namespace greeflas\yii\modules\I18n;
+namespace vintage\i18n;
 
 use Yii;
 use yii\base\BootstrapInterface;
 use yii\data\Pagination;
-use greeflas\yii\modules\I18n\console\controllers\I18nController;
+use vintage\i18n\console\controllers\I18nController;
 
 class Bootstrap implements BootstrapInterface
 {
