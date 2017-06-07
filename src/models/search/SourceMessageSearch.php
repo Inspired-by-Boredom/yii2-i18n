@@ -2,10 +2,10 @@
 
 namespace greeflas\yii\modules\I18n\models\search;
 
+use greeflas\yii\modules\I18n\models\Message;
 use yii\data\ActiveDataProvider;
 use yii\helpers\ArrayHelper;
 use greeflas\yii\modules\I18n\models\SourceMessage;
-use greeflas\yii\modules\I18n\Module;
 
 class SourceMessageSearch extends SourceMessage
 {
@@ -13,6 +13,7 @@ class SourceMessageSearch extends SourceMessage
     const STATUS_NOT_TRANSLATED = 2;
 
     public $status;
+    public $translation;
 
     /**
      * @inheritdoc
@@ -22,7 +23,8 @@ class SourceMessageSearch extends SourceMessage
         return [
             ['category', 'safe'],
             ['message', 'safe'],
-            ['status', 'safe']
+            ['status', 'safe'],
+            ['translation', 'safe'],
         ];
     }
 
@@ -32,7 +34,7 @@ class SourceMessageSearch extends SourceMessage
      */
     public function search($params)
     {
-        $query = SourceMessage::find();
+        $query = SourceMessage::find()->joinWith('message');
         $dataProvider = new ActiveDataProvider(['query' => $query]);
 
         if (!($this->load($params) && $this->validate())) {
@@ -48,7 +50,8 @@ class SourceMessageSearch extends SourceMessage
 
         $query
             ->andFilterWhere(['like', 'category', $this->category])
-            ->andFilterWhere(['like', 'message', $this->message]);
+            ->andFilterWhere(['like', 'message', $this->message])
+            ->andFilterWhere(['like', Message::tableName().'.translation', $this->translation]);
         return $dataProvider;
     }
 
