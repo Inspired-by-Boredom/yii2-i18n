@@ -5,16 +5,21 @@ I18N module makes the translation of your application so simple.
 
 Based on [Zelenin](https://github.com/zelenin/yii2-i18n-module) Yii2 I18N module.
 
+
+[![Total Downloads](https://poser.pugx.org/vintage/yii2-i18n/downloads)](https://packagist.org/packages/vintage/yii2-i18n)
+[![Latest Stable Version](https://poser.pugx.org/vintage/yii2-i18n/v/stable)](https://packagist.org/packages/vintage/yii2-i18n)
+[![Latest Unstable Version](https://poser.pugx.org/vintage/yii2-i18n/v/unstable)](https://packagist.org/packages/vintage/yii2-i18n)
+
 Installation
 ------------
 #### Install package
 Run command
 ```
-composer require greeflas/yii2-i18n
+composer require vintage/yii2-i18n
 ```
 or add
 ```json
-"greeflas/yii2-i18n": "dev-master"
+"vintage/yii2-i18n": "dev-master"
 ```
 to the require section of your composer.json.
 
@@ -24,7 +29,7 @@ Configuration
 ```php
 'components' => [
     'i18n' => [
-        'class' => greeflas\i18n\components\I18N::className(),
+        'class' => vintage\i18n\components\I18N::className(),
         'languages' => ['ru-RU', 'de-DE', 'it-IT'],
     ],
     // ...
@@ -35,7 +40,7 @@ Configuration
 
 ```php
 'modules' => [
-	'i18n' => greeflas\i18n\Module::className(),
+	'i18n' => vintage\i18n\Module::className(),
 	// ...
 ],
 ```
@@ -45,7 +50,7 @@ Usage
 -----
 Run command
 ```
-./yii migrate --migrationPath=@greeflas/i18n/migrations
+./yii migrate --migrationPath=@vintage/i18n/migrations
 ```
 
 Go to `http://backend.yourdomain.com/translations` for translating of messages
@@ -62,9 +67,9 @@ where `@common/messages` is path to app translations
 ### Database to PHP export
 Run command
 ```
-./yii i18n/export @greeflas/i18n/messages greeflas/i18n
+./yii i18n/export @vintage/i18n/messages vintage/i18n
 ```
-where `@greeflas/i18n/messages` is path to app translations and `greeflas/i18n` is translations category in DB
+where `@vintage/i18n/messages` is path to app translations and `vintage/i18n` is translations category in DB
 
 ### Using `yii` category with database
 Import translations from PHP files
@@ -75,7 +80,7 @@ Import translations from PHP files
 Configure I18N component
 ```php
 'i18n' => [
-    'class'=> greeflas\i18n\components\I18N::className(),
+    'class'=> vintage\i18n\components\I18N::className(),
     'languages' => ['ru-RU', 'de-DE', 'it-IT'],
     'translations' => [
         'yii' => [
