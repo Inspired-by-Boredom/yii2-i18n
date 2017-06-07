@@ -10,6 +10,7 @@ use yii\widgets\Pjax;
 use yii\grid\GridView;
 use yii\widgets\Breadcrumbs;
 use yii\helpers\ArrayHelper;
+use vintage\i18n\Module;
 use vintage\i18n\models\Message;
 
 /**
@@ -18,10 +19,8 @@ use vintage\i18n\models\Message;
  * @var \yii\data\ActiveDataProvider $dataProvider
  */
 
-$this->title = 'Переводы';
-echo Breadcrumbs::widget(['links' => [
-    $this->title
-]]);
+$this->title = Module::t('Translations');
+echo Breadcrumbs::widget(['links' => [$this->title]]);
 ?>
 <div class="panel panel-default">
     <div class="panel-heading">
@@ -67,8 +66,8 @@ echo Breadcrumbs::widget(['links' => [
                     'attribute' => 'status',
                     'value' => function ($model, $index, $widget) {
                         return Message::isModelFullyTranslated($model->id)
-                            ? 'Переведено'
-                            : 'Не переведено';
+                            ? Module::t('Translated')
+                            : Module::t('Not translated');
                     },
                     'filter' => Html::dropDownList($searchModel->formName() . '[status]', $searchModel->status, $searchModel->getStatus(), [
                         'class' => 'form-control',
