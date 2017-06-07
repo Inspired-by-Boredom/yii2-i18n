@@ -1,6 +1,6 @@
 <?php
 
-namespace Zelenin\yii\modules\I18n\controllers;
+namespace greeflas\yii\modules\I18n\controllers;
 
 use yii\base\Model;
 use yii\web\Controller;

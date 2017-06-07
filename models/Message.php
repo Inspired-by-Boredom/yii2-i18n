@@ -1,6 +1,6 @@
 <?php
 
-namespace Zelenin\yii\modules\I18n\models;
+namespace greeflas\yii\modules\I18n\models;
 
 use Yii;
 use yii\base\InvalidConfigException;

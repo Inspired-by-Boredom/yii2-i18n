@@ -1,6 +1,6 @@
 <?php
 
-namespace Zelenin\yii\modules\I18n;
+namespace greeflas\yii\modules\I18n;
 
 use Yii;
 use yii\base\BootstrapInterface;

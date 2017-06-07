@@ -1,6 +1,6 @@
 <?php
 
-namespace Zelenin\yii\modules\I18n\models\query;
+namespace greeflas\yii\modules\I18n\models\query;
 
 use Yii;
 use yii\db\ActiveQuery;

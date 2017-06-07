@@ -1,6 +1,6 @@
 <?php
 
-namespace Zelenin\yii\modules\I18n\models\search;
+namespace greeflas\yii\modules\I18n\models\search;
 
 use yii\data\ActiveDataProvider;
 use Yii;

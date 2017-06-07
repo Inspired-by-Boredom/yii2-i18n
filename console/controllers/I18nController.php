@@ -1,6 +1,6 @@
 <?php
 
-namespace Zelenin\yii\modules\I18n\console\controllers;
+namespace greeflas\yii\modules\I18n\console\controllers;
 
 use Yii;
 use yii\console\Controller;
