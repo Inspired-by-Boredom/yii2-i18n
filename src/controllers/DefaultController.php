@@ -35,7 +35,7 @@ class DefaultController extends Controller
 
         if (Model::loadMultiple($model->messages, Yii::$app->getRequest()->post()) && Model::validateMultiple($model->messages)) {
             $model->saveMessages();
-            Yii::$app->getSession()->setFlash('success', Module::t('Updated'));
+            Yii::$app->getSession()->setFlash('success', 'Перевод обновлен');
             return $this->redirect(['index']);
         } else {
             return $this->render('update', ['model' => $model]);
