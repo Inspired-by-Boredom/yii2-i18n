@@ -5,11 +5,12 @@
  * @license BSD 3-Clause License
  */
 
-use yii\grid\GridView;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
-use yii\widgets\Breadcrumbs;
 use yii\widgets\Pjax;
+use yii\grid\GridView;
+use yii\widgets\Breadcrumbs;
+use yii\helpers\ArrayHelper;
+use vintage\i18n\models\Message;
 
 /**
  * @var \yii\web\View $this
@@ -65,7 +66,7 @@ echo Breadcrumbs::widget(['links' => [
                 [
                     'attribute' => 'status',
                     'value' => function ($model, $index, $widget) {
-                        return \Zelenin\yii\modules\I18n\models\Message::isModelFullyTranslated($model->id)
+                        return Message::isModelFullyTranslated($model->id)
                             ? 'Переведено'
                             : 'Не переведено';
                     },
