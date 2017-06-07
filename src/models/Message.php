@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/Vintage-web-production/yii2-i18n
+ * @copyright Copyright (c) 2017 Vintage Web Production
+ * @license BSD 3-Clause License
+ */
 
 namespace vintage\i18n\models;
 
@@ -7,6 +12,16 @@ use yii\base\InvalidConfigException;
 use yii\db\ActiveRecord;
 use vintage\i18n\Module;
 
+/**
+ * Message model class
+ *
+ * @property int $id
+ * @property string $language
+ * @property string $translation
+ *
+ * @author Aleksandr Zelenin <aleksandr@zelenin.me>
+ * @since 1.0
+ */
 class Message extends ActiveRecord
 {
     /**

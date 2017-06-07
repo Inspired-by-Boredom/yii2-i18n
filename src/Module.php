@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/Vintage-web-production/yii2-i18n
+ * @copyright Copyright (c) 2017 Vintage Web Production
+ * @license BSD 3-Clause License
+ */
 
 namespace vintage\i18n;
 
@@ -6,6 +11,12 @@ use Yii;
 use yii\i18n\MissingTranslationEvent;
 use vintage\i18n\models\SourceMessage;
 
+/**
+ * I18N module definition class
+ *
+ * @author Aleksandr Zelenin <aleksandr@zelenin.me>
+ * @since 1.0
+ */
 class Module extends \yii\base\Module
 {
     public $pageSize = 50;

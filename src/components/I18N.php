@@ -1,19 +1,38 @@
 <?php
+/**
+ * @link https://github.com/Vintage-web-production/yii2-i18n
+ * @copyright Copyright (c) 2017 Vintage Web Production
+ * @license BSD 3-Clause License
+ */
 
 namespace vintage\i18n\components;
 
 use yii\base\InvalidConfigException;
 use yii\i18n\DbMessageSource;
 
+/**
+ * I18N extended component
+ *
+ * @author Aleksandr Zelenin <aleksandr@zelenin.me>
+ * @since 1.0
+ */
 class I18N extends \yii\i18n\I18N
 {
-    /** @var string */
+    /**
+     * @var string
+     */
     public $sourceMessageTable = '{{%source_message}}';
-    /** @var string */
+    /**
+     * @var string
+     */
     public $messageTable = '{{%message}}';
-    /** @var array */
+    /**
+     * @var array
+     */
     public $languages;
-    /** @var array */
+    /**
+     * @var array
+     */
     public $missingTranslationHandler = ['Zelenin\yii\modules\I18n\Module', 'missingTranslation'];
     /**
      * Message categories which will not be automatically added on MissingTranslationEvent

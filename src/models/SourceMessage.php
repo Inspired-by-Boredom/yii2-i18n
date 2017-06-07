@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/Vintage-web-production/yii2-i18n
+ * @copyright Copyright (c) 2017 Vintage Web Production
+ * @license BSD 3-Clause License
+ */
 
 namespace vintage\i18n\models;
 
@@ -8,6 +13,16 @@ use yii\db\ActiveRecord;
 use vintage\i18n\models\query\SourceMessageQuery;
 use vintage\i18n\Module;
 
+/**
+ * SourceMessage model class
+ *
+ * @property int $id
+ * @property string $category
+ * @property string $message
+ *
+ * @author Aleksandr Zelenin <aleksandr@zelenin.me>
+ * @since 1.0
+ */
 class SourceMessage extends ActiveRecord
 {
     /**

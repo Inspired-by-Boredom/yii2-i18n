@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/Vintage-web-production/yii2-i18n
+ * @copyright Copyright (c) 2017 Vintage Web Production
+ * @license BSD 3-Clause License
+ */
 
 namespace vintage\i18n;
 
@@ -7,6 +12,12 @@ use yii\base\BootstrapInterface;
 use yii\data\Pagination;
 use vintage\i18n\console\controllers\I18nController;
 
+/**
+ * Bootstrap class for module
+ *
+ * @author Aleksandr Zelenin <aleksandr@zelenin.me>
+ * @since 1.0
+ */
 class Bootstrap implements BootstrapInterface
 {
     /**

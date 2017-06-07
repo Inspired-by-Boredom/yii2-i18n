@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/Vintage-web-production/yii2-i18n
+ * @copyright Copyright (c) 2017 Vintage Web Production
+ * @license BSD 3-Clause License
+ */
 
 namespace vintage\i18n\models\query;
 
@@ -6,6 +11,12 @@ use Yii;
 use yii\db\ActiveQuery;
 use vintage\i18n\models\Message;
 
+/**
+ * Query class for [[SourceMessage]] model
+ *
+ * @author Aleksandr Zelenin <aleksandr@zelenin.me>
+ * @since 1.0
+ */
 class SourceMessageQuery extends ActiveQuery
 {
     public function notTranslated()

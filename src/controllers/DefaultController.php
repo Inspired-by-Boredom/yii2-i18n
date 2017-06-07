@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/Vintage-web-production/yii2-i18n
+ * @copyright Copyright (c) 2017 Vintage Web Production
+ * @license BSD 3-Clause License
+ */
 
 namespace vintage\i18n\controllers;
 
@@ -11,6 +16,12 @@ use vintage\i18n\models\search\SourceMessageSearch;
 use vintage\i18n\models\SourceMessage;
 use vintage\i18n\Module;
 
+/**
+ * DefaultController for I18N module
+ *
+ * @author Aleksandr Zelenin <aleksandr@zelenin.me>
+ * @since 1.0
+ */
 class DefaultController extends Controller
 {
     public function actionIndex()

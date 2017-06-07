@@ -1,9 +1,20 @@
 <?php
+/**
+ * @link https://github.com/Vintage-web-production/yii2-i18n
+ * @copyright Copyright (c) 2017 Vintage Web Production
+ * @license BSD 3-Clause License
+ */
 
 use yii\base\InvalidConfigException;
 use yii\db\Migration;
 use yii\db\Schema;
 
+/**
+ * Handles creation of messages tables
+ *
+ * @author Aleksandr Zelenin <aleksandr@zelenin.me>
+ * @since 1.0
+ */
 class m140609_093837_addI18nTables extends Migration
 {
     /**
