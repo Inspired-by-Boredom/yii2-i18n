@@ -19,7 +19,7 @@ composer require vintage/yii2-i18n
 ```
 or add
 ```json
-"vintage/yii2-i18n": "dev-master"
+"vintage/yii2-i18n": "~1.0"
 ```
 to the require section of your composer.json.
 
