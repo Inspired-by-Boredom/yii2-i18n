@@ -7,14 +7,18 @@
 
 return [
     'Category' => 'Категория',
+    'Create' => 'Создать',
+    'Editing' => 'Редактирование',
     'ID' => 'ID',
     'Language' => 'Язык',
     'Message' => 'Сообщение',
     'Not translated' => 'Не переведено',
+    'Save' => 'Сохранить',
     'Source message' => 'Исходное сообщение',
     'Translated' => 'Переведено',
     'Translation' => 'Перевод',
     'Translation status' => 'Статус перевода',
+    'Translation updated' => 'Перевод обновлен',
     'Translations' => 'Переводы',
     'Update' => 'Обновить',
     'Updated' => 'Обновлено',
