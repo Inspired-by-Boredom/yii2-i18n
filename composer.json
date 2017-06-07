@@ -1,7 +1,6 @@
 {
-    "name": "zelenin/yii2-i18n-module",
+    "name": "greeflas/yii2-i18n-module",
     "description": "Yii2 i18n (internalization) module makes the translation of your application so simple",
-    "version": "0.1.9",
     "type": "yii2-extension",
     "keywords": [
         "yii2",
@@ -9,8 +8,6 @@
         "translation",
         "translations"
     ],
-    "homepage": "https://github.com/zelenin/yii2-i18n-module",
-    "time": "2015-03-07",
     "license": "MIT",
     "authors": [
         {
@@ -21,19 +18,18 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/zelenin/yii2-i18n-module/issues",
-        "source": "https://github.com/zelenin/yii2-i18n-module"
+        "issues": "https://github.com/greeflas/yii2-i18n-module/issues",
+        "source": "https://github.com/greeflas/yii2-i18n-module"
     },
     "require": {
-        "yiisoft/yii2": "~2",
-        "zelenin/yii2-semantic-ui": "*"
+        "yiisoft/yii2": "~2.0"
     },
     "autoload": {
         "psr-4": {
-            "Zelenin\\yii\\modules\\I18n\\": ""
+            "greeflas\\yii\\modules\\I18n\\": ""
         }
     },
     "extra": {
-        "bootstrap": "Zelenin\\yii\\modules\\I18n\\Bootstrap"
+        "bootstrap": "greeflas\\yii\\modules\\I18n\\Bootstrap"
     }
 }
