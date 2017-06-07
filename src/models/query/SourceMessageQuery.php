@@ -19,6 +19,11 @@ use vintage\i18n\models\Message;
  */
 class SourceMessageQuery extends ActiveQuery
 {
+    /**
+     * Appends condition for not translated messages
+     *
+     * @return $this
+     */
     public function notTranslated()
     {
         $messageTableName = Message::tableName();
@@ -37,6 +42,11 @@ class SourceMessageQuery extends ActiveQuery
         return $this;
     }
 
+    /**
+     * Appends condition for translated messages
+     *
+     * @return $this
+     */
     public function translated()
     {
         $messageTableName = Message::tableName();

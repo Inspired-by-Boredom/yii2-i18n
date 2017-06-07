@@ -19,8 +19,20 @@ use vintage\i18n\models\SourceMessage;
  */
 class Module extends \yii\base\Module
 {
+    /**
+     * @var int
+     */
     public $pageSize = 50;
 
+
+    /**
+     * Wrapper for `Yii::t()`
+     *
+     * @param string $message
+     * @param array $params
+     * @param null|string $language
+     * @return string
+     */
     public static function t($message, $params = [], $language = null)
     {
         return Yii::t('app/i18n', $message, $params, $language);

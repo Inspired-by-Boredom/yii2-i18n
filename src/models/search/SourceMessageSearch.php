@@ -23,8 +23,15 @@ class SourceMessageSearch extends SourceMessage
     const STATUS_TRANSLATED = 1;
     const STATUS_NOT_TRANSLATED = 2;
 
+    /**
+     * @var int
+     */
     public $status;
+    /**
+     * @var string
+     */
     public $translation;
+
 
     /**
      * @inheritdoc
@@ -40,6 +47,8 @@ class SourceMessageSearch extends SourceMessage
     }
 
     /**
+     * Search models
+     *
      * @param array|null $params
      * @return ActiveDataProvider
      */
@@ -66,6 +75,12 @@ class SourceMessageSearch extends SourceMessage
         return $dataProvider;
     }
 
+    /**
+     * Returns status
+     *
+     * @param null $id
+     * @return array|mixed
+     */
     public static function getStatus($id = null)
     {
         $statuses = [

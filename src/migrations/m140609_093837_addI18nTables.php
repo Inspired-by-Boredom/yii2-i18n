@@ -18,8 +18,7 @@ use yii\db\Schema;
 class m140609_093837_addI18nTables extends Migration
 {
     /**
-     * @return bool|void
-     * @throws InvalidConfigException
+     * @inheritdoc
      */
     public function safeUp()
     {
@@ -45,6 +44,9 @@ class m140609_093837_addI18nTables extends Migration
         $this->addForeignKey('fk_source_message_message', $messageTable, 'id', $sourceMessageTable, 'id', 'cascade', 'restrict');
     }
 
+    /**
+     * @inheritdoc
+     */
     public function safeDown()
     {
         $i18n = Yii::$app->getI18n();

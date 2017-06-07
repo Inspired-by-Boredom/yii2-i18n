@@ -24,6 +24,11 @@ use vintage\i18n\Module;
  */
 class DefaultController extends Controller
 {
+    /**
+     * Renders list of messages
+     *
+     * @return string
+     */
     public function actionIndex()
     {
         $searchModel = new SourceMessageSearch;
@@ -35,7 +40,9 @@ class DefaultController extends Controller
     }
 
     /**
-     * @param integer $id
+     * Updates messages
+     *
+     * @param integer $id Message ID
      * @return string|Response
      */
     public function actionUpdate($id)
@@ -66,8 +73,8 @@ class DefaultController extends Controller
             : $query->one();
         if (!empty($models)) {
             return $models;
-        } else {
-            throw new NotFoundHttpException(Module::t('The requested page does not exist'));
         }
+
+        throw new NotFoundHttpException(Module::t('The requested page does not exist'));
     }
 }

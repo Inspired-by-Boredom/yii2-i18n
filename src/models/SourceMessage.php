@@ -34,8 +34,7 @@ class SourceMessage extends ActiveRecord
     }
 
     /**
-     * @return string
-     * @throws InvalidConfigException
+     * @inheritdoc
      */
     public static function tableName()
     {
@@ -46,6 +45,10 @@ class SourceMessage extends ActiveRecord
         return $i18n->sourceMessageTable;
     }
 
+    /**
+     * @inheritdoc
+     * @return SourceMessageQuery the newly created [[SourceMessageQuery]] instance.
+     */
     public static function find()
     {
         return new SourceMessageQuery(get_called_class());
@@ -77,11 +80,18 @@ class SourceMessage extends ActiveRecord
         ];
     }
 
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getMessages()
     {
-        return $this->hasMany(Message::className(), ['id' => 'id'])->indexBy('language');
+        return $this->hasMany(Message::className(), ['id' => 'id'])
+            ->indexBy('language');
     }
 
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getMessage()
     {
         $firstLang = Yii::$app->getI18n()->languages[0];
@@ -97,6 +107,9 @@ class SourceMessage extends ActiveRecord
         return SourceMessage::find()->select('category')->distinct('category')->asArray()->all();
     }
 
+    /**
+     * Init messages
+     */
     public function initMessages()
     {
         $messages = [];
@@ -112,6 +125,9 @@ class SourceMessage extends ActiveRecord
         $this->populateRelation('messages', $messages);
     }
 
+    /**
+     * Save messages
+     */
     public function saveMessages()
     {
         /** @var Message $message */
@@ -121,6 +137,11 @@ class SourceMessage extends ActiveRecord
         }
     }
 
+    /**
+     * Check is message translated
+     *
+     * @return bool
+     */
     public function isTranslated()
     {
         foreach ($this->messages as $message) {

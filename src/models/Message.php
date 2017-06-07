@@ -33,8 +33,7 @@ class Message extends ActiveRecord
     }
 
     /**
-     * @return string
-     * @throws InvalidConfigException
+     * @inheritdoc
      */
     public static function tableName()
     {
@@ -69,14 +68,18 @@ class Message extends ActiveRecord
         ];
     }
 
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getSourceMessage()
     {
         return $this->hasOne(SourceMessage::className(), ['id' => 'id']);
     }
 
     /**
-     * @param $modelId
+     * Check is model translated
      *
+     * @param int $modelId
      * @return bool
      */
     public static function isModelFullyTranslated($modelId)

@@ -45,7 +45,9 @@ class I18N extends \yii\i18n\I18N
      */
     public $db = 'db';
 
+
     /**
+     * @inheritdoc
      * @throws InvalidConfigException
      */
     public function init()

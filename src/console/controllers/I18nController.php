@@ -24,8 +24,10 @@ use vintage\i18n\models\SourceMessage;
 class I18nController extends Controller
 {
     /**
+     * Import messages
+     *
      * @param string $sourcePath
-     * @throws Exception
+     * @throws \Exception
      */
     public function actionImport($sourcePath = null)
     {
@@ -34,7 +36,7 @@ class I18nController extends Controller
         }
         $sourcePath = realpath(Yii::getAlias($sourcePath));
         if (!is_dir($sourcePath)) {
-            throw new Exception('The source path ' . $sourcePath . ' is not a valid directory.');
+            throw new \Exception('The source path ' . $sourcePath . ' is not a valid directory.');
         }
 
         $translationsFiles = FileHelper::findFiles($sourcePath, ['only' => ['*.php']]);
@@ -62,9 +64,11 @@ class I18nController extends Controller
     }
 
     /**
+     * Export messages
+     *
      * @param string $messagePath
      * @param string $category
-     * @throws Exception
+     * @throws \Exception
      */
     public function actionExport($messagePath = null, $category = null)
     {
@@ -73,14 +77,14 @@ class I18nController extends Controller
         }
         $messagePath = realpath(Yii::getAlias($messagePath));
         if (!is_dir($messagePath)) {
-            throw new Exception('The message path ' . $messagePath . ' is not a valid directory.');
+            throw new \Exception('The message path ' . $messagePath . ' is not a valid directory.');
         }
 
         if (!$category) {
             $category = $this->prompt('Enter an exporting category');
         }
         if (empty($category)) {
-            throw new Exception('The $category is empty.');
+            throw new \Exception('The $category is empty.');
         }
 
         $sourceMessages = SourceMessage::find()
@@ -165,6 +169,9 @@ EOD;
         }
     }
 
+    /**
+     * Clear messages
+     */
     public function actionFlush()
     {
         $tableNames = [
