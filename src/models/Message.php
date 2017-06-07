@@ -58,4 +58,21 @@ class Message extends ActiveRecord
     {
         return $this->hasOne(SourceMessage::className(), ['id' => 'id']);
     }
+
+    /**
+     * @param $modelId
+     *
+     * @return bool
+     */
+    public static function isModelFullyTranslated($modelId)
+    {
+        return static::find()
+                ->where(['id' => $modelId])
+                ->andWhere([
+                    'AND',
+                    ['is not', 'translation', null],
+                    ['<>', 'translation', ''],
+                ])
+                ->count() == count(Yii::$app->getI18n()->languages);
+    }
 }
