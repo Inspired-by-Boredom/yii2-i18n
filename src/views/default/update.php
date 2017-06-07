@@ -1,38 +1,37 @@
 <?php
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+use yii\widgets\Breadcrumbs;
+
 /**
- * @var View $this
- * @var SourceMessage $model
+ * @var \yii\web\View $this
+ * @var \greeflas\yii\modules\I18n\models\SourceMessage $model
  */
 
-use yii\helpers\Html;
-use yii\web\View;
-use Zelenin\yii\modules\I18n\models\SourceMessage;
-use Zelenin\yii\modules\I18n\Module;
-use Zelenin\yii\SemanticUI\collections\Breadcrumb;
-use Zelenin\yii\SemanticUI\Elements;
-use Zelenin\yii\SemanticUI\widgets\ActiveForm;
-
-$this->title = Module::t('Update') . ': ' . $model->message;
-echo Breadcrumb::widget(['links' => [
-    ['label' => Module::t('Translations'), 'url' => ['index']],
+$this->title = 'Редактирование' . ': ' . $model->message;
+echo Breadcrumbs::widget(['links' => [
+    ['label' => 'Переводы', 'url' => ['index']],
     ['label' => $this->title]
 ]]);
 ?>
-<div class="message-update">
-    <div class="message-form">
-        <?= Elements::header(Module::t('Source message'), ['class' => 'top attached']) ?>
-        <?= Elements::segment(Html::encode($model->message), ['class' => 'bottom attached']) ?>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Редактирование</h3>
+    </div>
+    <div class="panel-body">
         <?php $form = ActiveForm::begin(); ?>
-        <div class="field">
-            <div class="ui grid">
-                <?php foreach ($model->messages as $language => $message) : ?>
-                    <div class="four wide column">
-                        <?= $form->field($model->messages[$language], '[' . $language . ']translation')->label($language) ?>
-                    </div>
-                <?php endforeach; ?>
-            </div>
+        <div class="row">
+            <?php foreach ($model->messages as $language => $message) : ?>
+                <?= $form->field($model->messages[$language], '[' . $language . ']translation', ['options' => ['class' => 'form-group col-sm-6']])->textarea()->label($language) ?>
+            <?php endforeach; ?>
         </div>
-        <?= Html::submitButton(Module::t('Update'), ['class' => 'ui primary button']) ?>
+        <div class="form-group">
+            <?=
+            Html::submitButton(
+                $model->getIsNewRecord() ? 'Cоздать' : 'Сохранить',
+                ['class' => $model->getIsNewRecord() ? 'btn btn-success' : 'btn btn-primary']
+            ) ?>
+        </div>
         <?php $form::end(); ?>
     </div>
 </div>
