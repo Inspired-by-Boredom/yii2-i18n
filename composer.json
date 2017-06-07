@@ -1,12 +1,12 @@
 {
-    "name": "greeflas/yii2-i18n",
+    "name": "vintage/yii2-i18n",
     "description": "Yii2 i18n (internalization) module",
     "keywords": ["yii2", "i18n", "translation", "translations"],
     "type": "yii2-extension",
-    "license": "MIT",
+    "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/greeflas/yii2-i18n-module/issues",
-        "source": "https://github.com/greeflas/yii2-i18n-module"
+        "issues": "https://github.com/Vintage-web-production/yii2-i18n/issues",
+        "source": "https://github.com/Vintage-web-production/yii2-i18n"
     },
     "authors": [
         {
@@ -14,6 +14,22 @@
             "email": "aleksandr@zelenin.me",
             "homepage": "http://zelenin.me",
             "role": "Developer"
+        },
+        {
+            "name": "Naumenko Pavel",
+            "email": "not.gosu@gmail.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Vladimir Kuprienko",
+            "email": "vldmr.kuprieno@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
     ],
     "require": {
@@ -21,10 +37,10 @@
     },
     "autoload": {
         "psr-4": {
-            "greeflas\\i18n\\": "src"
+            "vintage\\i18n\\": "src"
         }
     },
     "extra": {
-        "bootstrap": "greeflas\\i18n\\Bootstrap"
+        "bootstrap": "vintage\\i18n\\Bootstrap"
     }
 }
