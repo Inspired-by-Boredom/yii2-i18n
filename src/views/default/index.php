@@ -5,11 +5,13 @@
  * @license BSD 3-Clause License
  */
 
-use yii\grid\GridView;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
-use yii\widgets\Breadcrumbs;
 use yii\widgets\Pjax;
+use yii\grid\GridView;
+use yii\widgets\Breadcrumbs;
+use yii\helpers\ArrayHelper;
+use vintage\i18n\Module;
+use vintage\i18n\models\Message;
 
 /**
  * @var \yii\web\View $this
@@ -17,10 +19,8 @@ use yii\widgets\Pjax;
  * @var \yii\data\ActiveDataProvider $dataProvider
  */
 
-$this->title = 'Переводы';
-echo Breadcrumbs::widget(['links' => [
-    $this->title
-]]);
+$this->title = Module::t('Translations');
+echo Breadcrumbs::widget(['links' => [$this->title]]);
 ?>
 <div class="panel panel-default">
     <div class="panel-heading">
@@ -65,9 +65,9 @@ echo Breadcrumbs::widget(['links' => [
                 [
                     'attribute' => 'status',
                     'value' => function ($model, $index, $widget) {
-                        return \Zelenin\yii\modules\I18n\models\Message::isModelFullyTranslated($model->id)
-                            ? 'Переведено'
-                            : 'Не переведено';
+                        return Message::isModelFullyTranslated($model->id)
+                            ? Module::t('Translated')
+                            : Module::t('Not translated');
                     },
                     'filter' => Html::dropDownList($searchModel->formName() . '[status]', $searchModel->status, $searchModel->getStatus(), [
                         'class' => 'form-control',

@@ -7,8 +7,9 @@
 
 namespace vintage\i18n\models\search;
 
-use yii\data\ActiveDataProvider;
 use yii\helpers\ArrayHelper;
+use yii\data\ActiveDataProvider;
+use vintage\i18n\Module;
 use vintage\i18n\models\Message;
 use vintage\i18n\models\SourceMessage;
 
@@ -84,8 +85,8 @@ class SourceMessageSearch extends SourceMessage
     public static function getStatus($id = null)
     {
         $statuses = [
-            self::STATUS_TRANSLATED => 'Переведено',
-            self::STATUS_NOT_TRANSLATED => 'Не переведено',
+            self::STATUS_TRANSLATED => Module::t('Translated'),
+            self::STATUS_NOT_TRANSLATED => Module::t('Not translated'),
         ];
         if ($id !== null) {
             return ArrayHelper::getValue($statuses, $id, null);

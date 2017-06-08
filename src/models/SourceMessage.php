@@ -8,10 +8,10 @@
 namespace vintage\i18n\models;
 
 use Yii;
-use yii\base\InvalidConfigException;
 use yii\db\ActiveRecord;
-use vintage\i18n\models\query\SourceMessageQuery;
+use yii\base\InvalidConfigException;
 use vintage\i18n\Module;
+use vintage\i18n\models\query\SourceMessageQuery;
 
 /**
  * SourceMessage model class
@@ -42,6 +42,7 @@ class SourceMessage extends ActiveRecord
         if (!isset($i18n->sourceMessageTable)) {
             throw new InvalidConfigException('You should configure i18n component');
         }
+
         return $i18n->sourceMessageTable;
     }
 
@@ -73,10 +74,10 @@ class SourceMessage extends ActiveRecord
 
         return [
             'id' => Module::t('ID'),
-            'category' => 'Категория',
-            'message' => 'Сообщение',
-            'status' => 'Статус',
-            'translation' => 'Перевод['.$firstLang.']',
+            'category' => Module::t('Category'),
+            'message' => Module::t('Message'),
+            'status' => Module::t('Status'),
+            'translation' => Module::t('Translation') . '[' . $firstLang . ']',
         ];
     }
 
@@ -96,7 +97,8 @@ class SourceMessage extends ActiveRecord
     {
         $firstLang = Yii::$app->getI18n()->languages[0];
 
-        return $this->hasOne(Message::className(), ['id' => 'id'])->where(['language' => $firstLang])->indexBy('language');
+        return $this->hasOne(Message::className(), ['id' => 'id'])
+            ->where(['language' => $firstLang])->indexBy('language');
     }
 
     /**
@@ -149,6 +151,7 @@ class SourceMessage extends ActiveRecord
                 return false;
             }
         }
+
         return true;
     }
 

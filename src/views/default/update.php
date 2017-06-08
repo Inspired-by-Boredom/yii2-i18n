@@ -8,21 +8,22 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\widgets\Breadcrumbs;
+use vintage\i18n\Module;
 
 /**
  * @var \yii\web\View $this
  * @var \vintage\i18n\models\SourceMessage $model
  */
 
-$this->title = 'Редактирование' . ': ' . $model->message;
+$this->title = Module::t('Editing') . ': ' . $model->message;
 echo Breadcrumbs::widget(['links' => [
-    ['label' => 'Переводы', 'url' => ['index']],
+    ['label' => Module::t('Translations'), 'url' => ['index']],
     ['label' => $this->title]
 ]]);
 ?>
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">Редактирование</h3>
+        <h3 class="panel-title"><?= Module::t('Editing') ?></h3>
     </div>
     <div class="panel-body">
         <?php $form = ActiveForm::begin(); ?>
@@ -32,9 +33,8 @@ echo Breadcrumbs::widget(['links' => [
             <?php endforeach; ?>
         </div>
         <div class="form-group">
-            <?=
-            Html::submitButton(
-                $model->getIsNewRecord() ? 'Cоздать' : 'Сохранить',
+            <?= Html::submitButton(
+                $model->getIsNewRecord() ? Module::t('Create') : Module::t('Save'),
                 ['class' => $model->getIsNewRecord() ? 'btn btn-success' : 'btn btn-primary']
             ) ?>
         </div>
