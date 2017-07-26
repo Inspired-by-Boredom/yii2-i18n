@@ -4,7 +4,7 @@ I18N Module Change Log
 1.1.0 June 12, 2017
 -------------------
 * Fix: Namespaces (insane-dev)
-* Enh: Translable labels (insane-dev)
+* Enh: Translate labels (insane-dev)
 * Enh: Add ukrainian translations (insane-dev)
 * Enh: Add composer.lock file
 
