@@ -8,8 +8,11 @@
 namespace vintage\i18n\models;
 
 use Yii;
+use yii\caching\Cache;
 use yii\db\ActiveRecord;
 use yii\base\InvalidConfigException;
+use yii\di\Instance;
+use yii\i18n\DbMessageSource;
 use vintage\i18n\Module;
 use vintage\i18n\models\query\SourceMessageQuery;
 
@@ -132,10 +135,24 @@ class SourceMessage extends ActiveRecord
      */
     public function saveMessages()
     {
-        /** @var Message $message */
+        /* @var \vintage\i18n\components\I18N $i18n */
+        $i18n = Yii::$app->getI18n();
+        /* @var Cache $cache */
+        $cache = $i18n->enableCaching ? Instance::ensure($i18n->cache, Cache::className()) : null;
+
+        /* @var Message $message */
         foreach ($this->messages as $message) {
             $this->link('messages', $message);
             $message->save();
+
+            if ($i18n->enableCaching) {
+                $key = [
+                    DbMessageSource::className(),
+                    $this->category,
+                    $message->language,
+                ];
+                $cache->delete($key);
+            }
         }
     }
 

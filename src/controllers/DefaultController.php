@@ -50,7 +50,6 @@ class DefaultController extends Controller
         /** @var SourceMessage $model */
         $model = $this->findModel($id);
         $model->initMessages();
-
         if (Model::loadMultiple($model->messages, Yii::$app->getRequest()->post()) && Model::validateMultiple($model->messages)) {
             $model->saveMessages();
             Yii::$app->getSession()->setFlash('success', Module::t('Translation updated'));

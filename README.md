@@ -90,6 +90,27 @@ Configure I18N component
 ],
 ```
 
+### Caching
+Cache will be updates automaticly if you updates translations in dashboard.
+
+If you using `\yii\caching\FileCache` your config should be like following
+```php
+// common/config/main.php
+`components` => [
+    // ...
+    'i18n' => [
+        'class'=> vintage\i18n\components\I18N::className(),
+        'languages' => ['ru-RU', 'de-DE', 'it-IT'],
+        'enableCaching' => true,
+        'cache' => 'i18nCache',
+    ],
+    'i18nCache' => [
+        'class' => \yii\caching\FileCache::className(),
+        'cachePath' => '@frontend/runtime/cache',
+    ],
+],
+```
+
 Other
 -----
 Component uses yii\i18n\MissingTranslationEvent for auto-add of missing translations to database.
