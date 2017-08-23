@@ -1,6 +1,6 @@
 {
     "name": "vintage/yii2-i18n",
-    "description": "Yii2 i18n (internalization) module",
+    "description": "Internalization module for automatic adding of translations to database",
     "keywords": ["yii2", "i18n", "translation", "translations"],
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
@@ -12,7 +12,6 @@
         {
             "name": "Aleksandr Zelenin",
             "email": "aleksandr@zelenin.me",
-            "homepage": "http://zelenin.me",
             "role": "Developer"
         },
         {
