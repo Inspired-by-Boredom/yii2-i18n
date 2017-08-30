@@ -1,6 +1,10 @@
 I18N Module Change Log
 ----------------------
 
+1.3.0 August 30, 2017
+---------------------
+* Enh: Adds `forceTranslation` property to component config (greeflas)
+
 1.2.0 August 23, 2017
 ---------------------
 * Enh: adds caching config to i18n component (greeflas)

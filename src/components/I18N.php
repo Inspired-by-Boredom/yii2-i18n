@@ -53,6 +53,12 @@ class I18N extends \yii\i18n\I18N
      */
     public $enableCaching = false;
     /**
+     * @var bool
+     * @see \yii\i18n\MessageSource::$forceTranslation
+     * @since 1.3
+     */
+    public $forceTranslation = true;
+    /**
      * @var array Languages list.
      */
     public $languages;
@@ -88,6 +94,7 @@ class I18N extends \yii\i18n\I18N
             'enableCaching' => $this->enableCaching,
             'sourceMessageTable' => $this->sourceMessageTable,
             'messageTable' => $this->messageTable,
+            'forceTranslation' => $this->forceTranslation,
             'on missingTranslation' => $this->missingTranslationHandler,
         ];
 
