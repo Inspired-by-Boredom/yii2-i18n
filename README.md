@@ -1,5 +1,11 @@
-Internalization module for Yii2 Framework
-=========================================
+<p align="center">
+    <a href="https://github.com/Vintage-web-production" target="_blank">
+        <img src="https://avatars1.githubusercontent.com/u/25753250" height="100px">
+    </a>
+    <h1 align="center">Internalization module for Yii2</h1>
+    <br>
+</p>
+
 Internalization module for automatic adding of translations to database.
 
 Based on [Zelenin](https://github.com/zelenin/yii2-i18n-module) I18N module.
